@@ -9,6 +9,11 @@ $(() => {
         index = (index + 1) % chars.length;
         $("#tip").text(chars[index]);
     });
+    $(window).on("click", () => {
+        lastTypeTime = Date.now();
+        index = (index + 1) % chars.length;
+        $("#tip").text(chars[index]);
+    });
     setInterval(() => {
         if (Date.now() - lastTypeTime > 500) {
             if (chars[index] != "_") {
